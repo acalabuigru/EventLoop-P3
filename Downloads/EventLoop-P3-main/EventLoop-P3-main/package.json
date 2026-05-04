@@ -1,0 +1,29 @@
+{
+  "name": "eventloop-p3",
+  "version": "1.0.0",
+  "description": "Backend con Node.js, Express, GraphQL y MongoDB para la plataforma EventLoop",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node --dns-result-order=ipv4first src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acalabuigru/EventLoop-P3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/acalabuigru/EventLoop-P3/issues"
+  },
+  "homepage": "https://github.com/acalabuigru/EventLoop-P3#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.10.2",
+    "mongodb": "^7.2.0"
+  }
+}
