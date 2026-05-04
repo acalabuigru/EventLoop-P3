@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/acalabuigru/EventLoop-P3#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^16.4.5",
     "express": "^5.2.1",
     "express-graphql": "^0.12.0",

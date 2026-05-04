@@ -1,6 +1,20 @@
-// src/schema.js
+/**
+ * @fileoverview Esquema GraphQL de EventLoop - Producto 3.
+ * Define Types, Queries y Mutations. Los tipos coinciden con los objetos
+ * de almacenaje.js del Producto 2: Usuario, Empleo y Seleccionado.
+ * @module schema
+ */
+
 const { buildSchema } = require('graphql');
 
+/**
+ * Esquema GraphQL (SDL). Types:
+ *  - Usuario: usuario registrado (id, nombre, email)
+ *  - Empleo: oferta o demanda de voluntariado (id, titulo, email, fecha, descripcion, tipo)
+ *  - Seleccionado: empleo favorito del administrador (mismos campos que Empleo)
+ *  - SesionResult: resultado del login (ok, nombre)
+ * @type {import('graphql').GraphQLSchema}
+ */
 module.exports = buildSchema(`
 
   type Usuario {
@@ -46,8 +60,10 @@ module.exports = buildSchema(`
     cerrarSesion: Boolean
 
     crearEmpleo(titulo: String!, email: String!, fecha: String!, descripcion: String!, tipo: String!): Empleo
+    actualizarEmpleo(id: ID!, titulo: String, email: String, fecha: String, descripcion: String, tipo: String): Empleo
     borrarEmpleo(id: ID!): Boolean
 
     guardarSeleccion(id: ID!, titulo: String!, email: String!, fecha: String!, descripcion: String!, tipo: String!): Seleccionado
+    borrarSeleccion(id: ID!): Boolean
   }
 `);
